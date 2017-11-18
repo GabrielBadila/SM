@@ -2,6 +2,6 @@
 using namespace std;
 
 int main(int argc, char const *argv[]) {
-  /* code */
-  return 0;
+    cout << "Sa trecem la treaba!" << endl;
+    return 0;
 }
