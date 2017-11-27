@@ -30,6 +30,6 @@
 
     Varianta Hybrid 1 (OpenMP + MPI)
         compilare:  mpic++ -o hybrid1 hybrid1.cpp -fopenmp
-        rulare:     mpirun --oversubscribe -np <num_procs> ./mpi <in_file> ( <out_file> )
+        rulare:     mpirun --oversubscribe -np <num_procs> ./hybrid1 <in_file> ( <out_file> )
 
 	======================================================================================
