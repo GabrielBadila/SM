@@ -10,7 +10,7 @@
 	342 C1
 
 
-	======================================================================================
+	=========================================================================================
 
 	Varianta Seriala
         compilare:  gcc-7 -o serial serial.c
@@ -32,4 +32,19 @@
         compilare:  mpic++ -o hybrid1 hybrid1.cpp -fopenmp
         rulare:     mpirun --oversubscribe -np <num_procs> ./hybrid1 <in_file> ( <out_file> )
 
-	======================================================================================
+	=========================================================================================
+
+	Tema 1
+		- varianta seriala
+		- varianta paralelizata folosind OpenMP
+		- varianta paralelizata folosind MPI
+
+	Tema 2
+		- varianta paralelizata folosind Pthreads
+		- varianta paralelizata folosind hibridul OpenMP + MPI
+
+	Tema 3
+		- diagramele cu rezultate pentru toate variantele
+		- prezentarea rezultatelor
+
+	=========================================================================================

@@ -28,7 +28,7 @@ void selectionSort(int *v, int n) {
     for (int i = n - 1; i > 0; --i) {
         // Find the maximum element in unsorted array
         struct Compare max;
-        //max.val = INT_MIN;
+        // max.val = INT_MIN;
         max.val = v[i];
         max.index = i;
         // Use pragma omp paralle for reduction to parallelize work

@@ -133,7 +133,7 @@ int main(int argc, char *argv[]) {
             other = (int *)malloc(o * sizeof(int));
             MPI_Recv(other, o, MPI_INT, rank + step, 0, MPI_COMM_WORLD, &status);
             // merge and free memory
-            data = merge(chunk, s, other, o); // pe aici e ceva in neregula
+            data = merge(chunk, s, other, o);
             free(chunk);
             free(other);
             chunk = data;
