@@ -67,7 +67,7 @@ int * merge(int *v1, int n1, int *v2, int n2) {
 /* Function to print an array */
 void printArray(int *v, int n) {
     int i;
-    for (i=0; i < n; ++i) {
+    for (i = 0; i < n; ++i) {
         printf("%d ", v[i]);
     }
     printf("\n");
@@ -164,17 +164,18 @@ int main(int argc, char *argv[]) {
         k++;
     }
 
-    printf("Sorted array: \n");
-    printArray(args_s[0].v, args_s[0].len);
-
-    // write sorted data to out file
-    /*
-    file = fopen(argv[2], "w");
-    for (i = 0; i < args_s[0].len; i++) {
-        fprintf(file, "%d\n", args_s[0].v[i]);
+    // print or write sorted data to out file
+    if (!argv[2]) {
+        printf("Sorted array: \n");
+        printArray(args_s[0].v, args_s[0].len);
+    } else {
+        file = fopen(argv[2], "w");
+        fprintf(file, "%d\n", args_s[0].len);
+        for (i = 0; i < args_s[0].len; i++) {
+            fprintf(file, "%d\n", args_s[0].v[i]);
+        }
+        fclose(file);
     }
-    fclose(file);
-    */
 
     return 0;
 }

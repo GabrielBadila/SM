@@ -71,7 +71,7 @@ int * merge(int *v1, int n1, int *v2, int n2) {
 /* Function to print an array */
 void printArray(int *v, int n) {
     int i;
-    for (i=0; i < n; ++i) {
+    for (i = 0; i < n; ++i) {
         printf("%d ", v[i]);
     }
     printf("\n");
@@ -169,22 +169,20 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    // print sorted data
     if(rank == 0) {
-        printf("Sorted array: \n");
-        printArray(chunk, s);
-    }
-
-    // write sorted data to out file
-    /*
-    if(rank == 0) {
-        file = fopen(argv[2], "w");
-        for (i = 0; i < s; i++) {
-            fprintf(file, "%d\n", chunk[i]);
+        // print or write sorted data to out file
+        if (!argv[2]) {
+            printf("Sorted array: \n");
+            printArray(chunk, s);
+        } else {
+            file = fopen(argv[2], "w");
+            fprintf(file, "%d\n", s);
+            for (i = 0; i < s; i++) {
+                fprintf(file, "%d\n", chunk[i]);
+            }
+            fclose(file);
         }
-        fclose(file);
     }
-    */
 
     MPI_Finalize();
     return 0;

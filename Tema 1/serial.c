@@ -29,7 +29,7 @@ void selectionSort(int *v, int n) {
 /* Function to print an array */
 void printArray(int *v, int n) {
     int i;
-    for (i=0; i < n; ++i) {
+    for (i = 0; i < n; ++i) {
         printf("%d ", v[i]);
     }
     printf("\n");
@@ -58,17 +58,19 @@ int main(int argc, char *argv[]) {
     fclose(file);
 
     selectionSort(data, n);
-    printf("Sorted array: \n");
-    printArray(data, n);
 
-    // write sorted data to out file
-    /*
-    file = fopen(argv[2], "w");
-    for (i = 0; i < n; i++) {
-        fprintf(file, "%d\n", data[i]);
+    // print or write sorted data to out file
+    if (!argv[2]) {
+        printf("Sorted array: \n");
+        printArray(data, n);
+    } else {
+        file = fopen(argv[2], "w");
+        fprintf(file, "%d\n", n);
+        for (i = 0; i < n; i++) {
+            fprintf(file, "%d\n", data[i]);
+        }
+        fclose(file);
     }
-    fclose(file);
-    */
 
     return 0;
 }

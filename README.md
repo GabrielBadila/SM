@@ -25,12 +25,16 @@
         rulare:     mpirun --oversubscribe -np <num_procs> ./mpi <in_file> ( <out_file> )
 
     Varianta Pthreads
-        compilare:  gcc-7 -o pthreads pthreads.c -lpthread
+        compilare:  gcc-7 -o pthreads pthreads.c -lpthread -lm
         rulare:     ./pthreads <in_file> ( <out_file> )
 
     Varianta Hybrid 1 (OpenMP + MPI)
         compilare:  mpic++ -o hybrid1 hybrid1.cpp -fopenmp
         rulare:     mpirun --oversubscribe -np <num_procs> ./hybrid1 <in_file> ( <out_file> )
+
+	Rulare checker de verificare a fisierelor de output
+		compilare:	gcc-7 -o orderChecker orderChecker.c
+		rulare:		./orderChecker <in_file>
 
 	=========================================================================================
 
